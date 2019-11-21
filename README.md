@@ -14,10 +14,10 @@ Mirvis, Denis Nadeau, and Matthew Thompson.
 | [netCDF C++](https://github.com/Unidata/netcdf-cxx4)                     | 4.3.1       |
 | [HDF5](https://portal.hdfgroup.org/display/support)                      | 1.10.5      |
 | [HDF4](https://portal.hdfgroup.org/display/support)                      | 4.2.14      |
-| [pFUnit](https://github.com/Goddard-Fortran-Ecosystem/pFUnit)            | 4.1.1       |
-| [gFTL](https://github.com/Goddard-Fortran-Ecosystem/gFTL)                | 1.2.2       |
-| [gFTL-shared](https://github.com/Goddard-Fortran-Ecosystem/gFTL-shared)  | 1.0.2       |
-| [fArgParse](https://github.com/Goddard-Fortran-Ecosystem/fArgParse)      | 0.9.1       |
+| [pFUnit](https://github.com/Goddard-Fortran-Ecosystem/pFUnit)            | v4.1.1      |
+| [gFTL](https://github.com/Goddard-Fortran-Ecosystem/gFTL)                | v1.2.2      |
+| [gFTL-shared](https://github.com/Goddard-Fortran-Ecosystem/gFTL-shared)  | v1.0.2      |
+| [fArgParse](https://github.com/Goddard-Fortran-Ecosystem/fArgParse)      | v0.9.1      |
 | [antlr](https://www.antlr.org/)                                          | 2.7.7       |
 | [GSL](https://www.gnu.org/software/gsl/)                                 | 2.6         |
 | [jpeg](http://www.ijg.org/)                                              | 9c          |
