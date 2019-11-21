@@ -46,7 +46,7 @@ set(DEFAULT_INSTALL_NAME ${INSTALL_COMPILER_NAME}-${INSTALL_MPI_NAME})
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
    message(STATUS "*** Attempt to use default CMAKE_INSTALL_PREFIX of ${CMAKE_INSTALL_PREFIX} which is usually only writable by root")
    set (CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}/${DEFAULT_INSTALL_NAME}/${CMAKE_SYSTEM_NAME}" CACHE PATH "Default install path" FORCE )
-   message(STATUS "*** Setting default install prefix to ${BoldYellow}${CMAKE_INSTALL_PREFIX}${ColorReset}.")
+   message(STATUS "*** Setting default install prefix to ${BoldYellow}${CMAKE_INSTALL_PREFIX}${ColorReset}")
    message(STATUS "*** Override with -DCMAKE_INSTALL_PREFIX=<path>.")
 else()
    get_filename_component(LAST_DIR_NODE ${CMAKE_INSTALL_PREFIX} NAME)
@@ -54,7 +54,7 @@ else()
    if (NOT LAST_DIR_NODE STREQUAL ${CMAKE_SYSTEM_NAME})
       message(FATAL_ERROR 
          "Due to current scripting limitations in GEOS, the last node of the Baselibs installation must\
-         match the CMAKE_SYSTEM_NAME (aka 'uname -s') which for this machine is ${BoldYellow}${CMAKE_SYSTEM_NAME}${ColorReset}.\
+         match the CMAKE_SYSTEM_NAME (aka 'uname -s') which for this machine is ${BoldYellow}${CMAKE_SYSTEM_NAME}${ColorReset}\
          Please change your CMAKE_INSTALL_PREFIX so that the last folder in the directory\
          path is ${BoldYellow}${CMAKE_SYSTEM_NAME}${ColorReset} a la:
          ${BoldWhite}${CMAKE_INSTALL_PREFIX}/${CMAKE_SYSTEM_NAME}${ColorReset}

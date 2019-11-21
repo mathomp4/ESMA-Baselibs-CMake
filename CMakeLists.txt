@@ -16,6 +16,7 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
 set(CMAKE_INSTALL_MESSAGE LAZY)
 
+set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR})
 
 include(GNUInstallDirs)
 
@@ -687,6 +688,11 @@ ExternalProject_Add(flap
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    )
 
 ########
