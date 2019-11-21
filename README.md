@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8fbf2d9b0c044a63b34eeb6ab6e7add8)](https://www.codacy.com/manual/mathomp4/ESMA-Baselibs-CMake?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mathomp4/ESMA-Baselibs-CMake&amp;utm_campaign=Badge_Grade)
+
 # ESMA Baselibs
 
 This git repository contains a simplified version of the "baselibs"
