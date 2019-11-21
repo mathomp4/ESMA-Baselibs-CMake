@@ -661,8 +661,10 @@ set(UDUNITS2_INCLUDE_DIR ${INSTALL_DIR}/include/udunits2)
 ########
 
 FetchContent_Declare(flap
-   URL      ${FLAP_URL}
-   URL_HASH ${FLAP_HASH}
+   GIT_REPOSITORY https://github.com/mathomp4/FLAP.git
+   GIT_TAG        geos/v1.4.0
+   GIT_SHALLOW    TRUE
+   GIT_PROGRESS   TRUE
 )
 FetchContent_GetProperties(flap)
 if(NOT flap_POPULATED)
@@ -805,8 +807,6 @@ ExternalProject_Add(pfunit
 ########
 
 FetchContent_Declare(esmf
-   #URL      ${ESMF_URL}
-   #URL_HASH ${ESMF_HASH}
    GIT_REPOSITORY https://git.code.sf.net/p/esmf/esmf
    GIT_TAG ESMF_8_0_1_beta_snapshot_02
    GIT_SHALLOW TRUE
