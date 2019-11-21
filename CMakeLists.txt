@@ -768,6 +768,7 @@ ExternalProject_Add(fargparse
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
    DEPENDS gftl
+   DEPENDS gftl-shared
    )
 
 ##########
