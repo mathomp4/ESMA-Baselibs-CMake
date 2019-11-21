@@ -99,14 +99,16 @@ include(FetchContent)
 #set(FETCHCONTENT_QUIET FALSE)
 set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
 
+include(LibraryVersions.cmake)
+
 #########
 # ANTLR #
 #########
 
 if (Java_FOUND)
    FetchContent_Declare(antlr
-      URL http://dust.ess.uci.edu/nco/antlr-2.7.7.tar.gz
-      URL_HASH SHA512=130b5d7ea676f28f75fe75da9b5e11caf6d6c92f51e33ff80a9f624735c8da8a3d62a2ef7e86a6812c932984fa56525388124d9314c0a6bd418ab97b078d85cb
+      URL      ${ANTLR_URL}
+      URL_HASH ${ANTLR_HASH}
    )
    FetchContent_GetProperties(antlr)
    if(NOT antlr_POPULATED)
@@ -142,8 +144,8 @@ endif ()
 
 if (Java_FOUND)
    FetchContent_Declare(gsl
-      URL http://mirrors.ibiblio.org/gnu/ftp/gnu/gsl/gsl-2.6.tar.gz
-      URL_HASH SHA512=0be8240715f0b86aba2c63d9f12da4dba4719d4e350e9308d279e0dd3b2f0519ea26fd2e38a17f3e8cf43aacbaa2455207a7ca0d6c305f3b8725e8ece2250a74
+      URL      ${GSL_URL}
+      URL_HASH ${GSL_HASH}
    )
    FetchContent_GetProperties(gsl)
    if(NOT gsl_POPULATED)
@@ -180,14 +182,12 @@ endif ()
 ########
 
 FetchContent_Declare(jpeg
-   GIT_REPOSITORY https://github.com/libjpeg-turbo/ijg.git
-   GIT_TAG jpeg-9c
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${JPEG_URL}
+   URL_HASH ${JPEG_HASH}
 )
 FetchContent_GetProperties(jpeg)
 if(NOT jpeg_POPULATED)
-   message(STATUS "Cloning jpeg...")
+   message(STATUS "Fetching jpeg...")
    FetchContent_Populate(jpeg)
 endif()
 
@@ -214,14 +214,12 @@ set(JPEG_INCLUDE_DIR ${INSTALL_DIR}/include/jpeg)
 ########
 
 FetchContent_Declare(zlib
-   GIT_REPOSITORY https://github.com/madler/zlib.git
-   GIT_TAG v1.2.11
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${ZLIB_URL}
+   URL_HASH ${ZLIB_HASH}
 )
 FetchContent_GetProperties(zlib)
 if(NOT zlib_POPULATED)
-   message(STATUS "Cloning zlib...")
+   message(STATUS "Fetching zlib...")
    FetchContent_Populate(zlib)
 endif()
 
@@ -252,8 +250,8 @@ set(ZLIB_INCLUDE_DIR ${INSTALL_DIR}/include/zlib)
 ########
 
 FetchContent_Declare(szip
-   URL https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz
-   URL_HASH SHA512=ada6406efb096cd8a2daf8f9217fe9111a96dcae87e29d1c31f58ddd2ad2aa7bac03f23c7205dc9360f3b62d259461759330c7189ef0c2fe559704b1ea9d40dd
+   URL      ${SZIP_URL}
+   URL_HASH ${SZIP_HASH}
 )
 FetchContent_GetProperties(szip)
 if(NOT szip_POPULATED)
@@ -291,8 +289,8 @@ set(SZIP_INCLUDE_DIR ${INSTALL_DIR}/include/szip)
 
 if (BUILD_CURL)
    FetchContent_Declare(curl
-      URL https://curl.haxx.se/download/curl-7.67.0.tar.xz
-      URL_HASH SHA512=1d5a344be92dd61b1ba5189eff0fe337e492f2e850794943570fe71c985d0af60bd412082be646e07aaa8639908593e1ce4bb2d07db35394ec377e8ce8b9ae29
+      URL      ${CURL_URL}
+      URL_HASH ${CURL_HASH}
    )
    FetchContent_GetProperties(curl)
    if(NOT curl_POPULATED)
@@ -344,14 +342,12 @@ endif ()
 ########
 
 FetchContent_Declare(hdf4
-   GIT_REPOSITORY https://bitbucket.hdfgroup.org/scm/hdffr/hdf4.git
-   GIT_TAG hdf-4_2_14
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${HDF4_URL}
+   URL_HASH ${HDF4_HASH}
 )
 FetchContent_GetProperties(hdf4)
 if(NOT hdf4_POPULATED)
-   message(STATUS "Cloning hdf4...")
+   message(STATUS "Fetching hdf4...")
    FetchContent_Populate(hdf4)
 endif()
 
@@ -402,14 +398,12 @@ set(HDF4_INCLUDE_DIR ${INSTALL_DIR}/include/hdf)
 ########
 
 FetchContent_Declare(hdf5
-   GIT_REPOSITORY https://bitbucket.hdfgroup.org/scm/hdffv/hdf5.git
-   GIT_TAG hdf5-1_10_5
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${HDF5_URL}
+   URL_HASH ${HDF5_HASH}
 )
 FetchContent_GetProperties(hdf5)
 if(NOT hdf5_POPULATED)
-   message(STATUS "Cloning hdf5...")
+   message(STATUS "Fetching hdf5...")
    FetchContent_Populate(hdf5)
 endif()
 
@@ -487,14 +481,12 @@ string(REPLACE ";" " " NETCDF_NEEDED_INCLUDES_STRING "${NETCDF_NEEDED_INCLUDES}"
 #set(CURL_LIBS "-lssl -lcrypto -lz")
 
 FetchContent_Declare(netcdf
-   GIT_REPOSITORY https://github.com/Unidata/netcdf-c.git
-   GIT_TAG v4.7.2
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${NETCDF_URL}
+   URL_HASH ${NETCDF_HASH}
 )
 FetchContent_GetProperties(netcdf)
 if(NOT netcdf_POPULATED)
-   message(STATUS "Cloning netcdf...")
+   message(STATUS "Fetching netcdf...")
    FetchContent_Populate(netcdf)
 endif()
 
@@ -556,14 +548,12 @@ set(NETCDF_INCLUDE_DIR ${INSTALL_DIR}/include/netcdf)
 ##################
 
 FetchContent_Declare(netcdf-fortran
-   GIT_REPOSITORY https://github.com/Unidata/netcdf-fortran.git
-   GIT_TAG v4.5.2
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${NETCDF_FORTRAN_URL}
+   URL_HASH ${NETCDF_FORTRAN_HASH}
 )
 FetchContent_GetProperties(netcdf-fortran)
 if(NOT netcdf-fortran_POPULATED)
-   message(STATUS "Cloning netcdf-fortran...")
+   message(STATUS "Fetching netcdf-fortran...")
    FetchContent_Populate(netcdf-fortran)
 endif()
 
@@ -596,14 +586,12 @@ ExternalProject_Add(netcdf-fortran
 ###############
 
 FetchContent_Declare(netcdf-cxx4
-   GIT_REPOSITORY https://github.com/Unidata/netcdf-cxx4.git
-   GIT_TAG v4.3.1
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${NETCDF_CXX4_URL}
+   URL_HASH ${NETCDF_CXX4_HASH}
 )
 FetchContent_GetProperties(netcdf-cxx4)
 if(NOT netcdf-cxx4_POPULATED)
-   message(STATUS "Cloning netcdf-cxx4...")
+   message(STATUS "Fetching netcdf-cxx4...")
    FetchContent_Populate(netcdf-cxx4)
 endif()
 
@@ -635,8 +623,8 @@ ExternalProject_Add(netcdf-cxx4
 ############
 
 FetchContent_Declare(udunits2
-   URL ftp://ftp.unidata.ucar.edu/pub/udunits/udunits-2.2.26.tar.gz
-   URL_HASH SHA512=9e5320454646458ac40ba0855b6b8e12f7edbdb4b9a6c687a4c38ad07400e2e0c0f7968069885f83eb73da64886e1c6dd1e462ebc23205df849c3a460cedb640
+   URL      ${UDUNITS2_URL}
+   URL_HASH ${UDUNITS2_HASH}
 )
 FetchContent_GetProperties(udunits2)
 if(NOT udunits2_POPULATED)
@@ -673,14 +661,12 @@ set(UDUNITS2_INCLUDE_DIR ${INSTALL_DIR}/include/udunits2)
 ########
 
 FetchContent_Declare(flap
-   GIT_REPOSITORY https://github.com/mathomp4/FLAP.git
-   GIT_TAG geos/v1.4.0
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${FLAP_URL}
+   URL_HASH ${FLAP_HASH}
 )
 FetchContent_GetProperties(flap)
 if(NOT flap_POPULATED)
-   message(STATUS "Cloning flap...")
+   message(STATUS "Fetching flap...")
    FetchContent_Populate(flap)
 endif()
 
@@ -702,14 +688,12 @@ ExternalProject_Add(flap
 ########
 
 FetchContent_Declare(gftl
-   GIT_REPOSITORY https://github.com/Goddard-Fortran-Ecosystem/gFTL.git
-   GIT_TAG v1.2.2
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${GFTL_URL}
+   URL_HASH ${GFTL_HASH}
 )
 FetchContent_GetProperties(gftl)
 if(NOT gftl_POPULATED)
-   message(STATUS "Cloning gftl...")
+   message(STATUS "Fetching gftl...")
    FetchContent_Populate(gftl)
 endif()
 
@@ -731,14 +715,12 @@ ExternalProject_Add(gftl
 ###############
 
 FetchContent_Declare(gftl-shared
-   GIT_REPOSITORY https://github.com/Goddard-Fortran-Ecosystem/gFTL-shared.git
-   GIT_TAG v1.0.2
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${GFTL_SHARED_URL}
+   URL_HASH ${GFTL_SHARED_HASH}
 )
 FetchContent_GetProperties(gftl-shared)
 if(NOT gftl-shared_POPULATED)
-   message(STATUS "Cloning gftl-shared...")
+   message(STATUS "Fetching gftl-shared...")
    FetchContent_Populate(gftl-shared)
 endif()
 
@@ -762,14 +744,12 @@ ExternalProject_Add(gftl-shared
 #############
 
 FetchContent_Declare(fargparse
-   GIT_REPOSITORY https://github.com/Goddard-Fortran-Ecosystem/fArgParse.git
-   GIT_TAG v0.9.1
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${FARGPARSE_URL}
+   URL_HASH ${FARGPARSE_HASH}
 )
 FetchContent_GetProperties(fargparse)
 if(NOT fargparse_POPULATED)
-   message(STATUS "Cloning fargparse...")
+   message(STATUS "Fetching fargparse...")
    FetchContent_Populate(fargparse)
 endif()
 
@@ -793,14 +773,12 @@ ExternalProject_Add(fargparse
 ##########
 
 FetchContent_Declare(pfunit
-   GIT_REPOSITORY https://github.com/Goddard-Fortran-Ecosystem/pFUnit.git
-   GIT_TAG v4.1.1
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${PFUNIT_URL}
+   URL_HASH ${PFUNIT_HASH}
 )
 FetchContent_GetProperties(pfunit)
 if(NOT pfunit_POPULATED)
-   message(STATUS "Cloning pfunit...")
+   message(STATUS "Fetching pfunit...")
    FetchContent_Populate(pfunit)
 endif()
 
@@ -827,6 +805,8 @@ ExternalProject_Add(pfunit
 ########
 
 FetchContent_Declare(esmf
+   #URL      ${ESMF_URL}
+   #URL_HASH ${ESMF_HASH}
    GIT_REPOSITORY https://git.code.sf.net/p/esmf/esmf
    GIT_TAG ESMF_8_0_1_beta_snapshot_02
    GIT_SHALLOW TRUE
@@ -834,7 +814,7 @@ FetchContent_Declare(esmf
 )
 FetchContent_GetProperties(esmf)
 if(NOT esmf_POPULATED)
-   message(STATUS "Cloning esmf...")
+   message(STATUS "Fetching esmf...")
    FetchContent_Populate(esmf)
 endif()
 
@@ -892,14 +872,12 @@ else ()
 endif ()
 
 FetchContent_Declare(nco
-   GIT_REPOSITORY https://github.com/nco/nco.git
-   GIT_TAG 4.8.1
-   GIT_SHALLOW TRUE
-   GIT_PROGRESS TRUE
+   URL      ${NCO_URL}
+   URL_HASH ${NCO_HASH}
 )
 FetchContent_GetProperties(nco)
 if(NOT nco_POPULATED)
-   message(STATUS "Cloning nco...")
+   message(STATUS "Fetching nco...")
    FetchContent_Populate(nco)
 endif()
 
@@ -954,8 +932,8 @@ ExternalProject_Add(nco
 #######
 
 FetchContent_Declare(cdo
-   URL https://code.mpimet.mpg.de/attachments/download/20826/cdo-1.9.8.tar.gz
-   URL_HASH SHA512=05bcaac5971dbcb5b3169b0ebf0939f2d727b0506beaee8364282d27fac03046dbc130241ec2501e8b261349365096f79bbbdb9bd67aae4488baea8c1343d2b2
+   URL      ${CDO_URL}
+   URL_HASH ${CDO_HASH}
 )
 FetchContent_GetProperties(cdo)
 if(NOT cdo_POPULATED)
@@ -997,8 +975,8 @@ ExternalProject_Add(cdo
 #########
 
 FetchContent_Declare(nccmp
-   URL https://gitlab.com/remikz/nccmp/-/archive/1.8.5.0/nccmp-1.8.5.0.tar.bz2
-   URL_HASH SHA512=7c243a9ff4a33dae5224fd9cb7b5fa8954ea55677c85ed7478ccf071eed63c96ddc4f03be08f0fd0646dfb10b9615696198ecbb003d522cc186fe9dc60283846
+   URL      ${NCCMP_URL}
+   URL_HASH ${NCCMP_HASH}
 )
 FetchContent_GetProperties(nccmp)
 if(NOT nccmp_POPULATED)
@@ -1036,8 +1014,8 @@ ExternalProject_Add(nccmp
 
 if (BUILD_HDFEOS)
    FetchContent_Declare(hdfeos
-      URL https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos/latest_release/HDF-EOS2.20v1.00.tar.Z
-      URL_HASH SHA512=9ca7cf96d7357c02e82e9290aed5343fdbf27afcbaa755794fbf51f5f27ce3f02e6d9e15a69ced4136d5e9e2610448cc720af049430cd26e37c194983717400a
+      URL      ${HDFEOS_URL}
+      URL_HASH ${HDFEOS_HASH}
    )
    FetchContent_GetProperties(hdfeos)
    if(NOT hdfeos_POPULATED)
@@ -1079,8 +1057,8 @@ endif (BUILD_HDFEOS)
 
 if (BUILD_HDFEOS5)
    FetchContent_Declare(hdfeos5
-      URL https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos5/latest_release/HDF-EOS5.1.16.tar.Z
-      URL_HASH SHA512=d6576ef796903c7df97edc8f6ae8641c08dec7342f36c7a6ece361f696a7543281bbd7485fc47562a300b0bad87289e25322812bb6997d0191639eb5688424a8
+      URL      ${HDFEOS5_URL}
+      URL_HASH ${HDFEOS5_HASH}
    )
    FetchContent_GetProperties(hdfeos5)
    if(NOT hdfeos5_POPULATED)
@@ -1122,8 +1100,8 @@ endif (BUILD_HDFEOS5)
 
 if (BUILD_SDPTOOLKIT)
    FetchContent_Declare(sdptoolkit
-      URL https://observer.gsfc.nasa.gov/ftp/edhs/sdptk/latest_release/SDPTK5.2.20v1.01.tar.Z
-      URL_HASH SHA512=446b3976dd4f21af5ea421dc325d6c8edbb8ea5178e02d37572b143726c0367740d2b07ef48120a5bd31ef700a34c34138f89c21215a921ce877cefbdf159d98
+      URL      ${SDPTK_URL}
+      URL_HASH ${SDPTK_HASH}
    )
    FetchContent_GetProperties(sdptoolkit)
    if(NOT sdptoolkit_POPULATED)
