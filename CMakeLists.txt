@@ -419,7 +419,7 @@ ExternalProject_Add(hdf4
       --program-suffix=-hdf4
       --includedir=<INSTALL_DIR>/include/hdf
       --with-zlib=${ZLIB_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
-      --with-szip=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
+      --with-szlib=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
       --with-jpeg=${JPEG_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
       --disable-netcdf
       CC=${SERIAL_C_COMPILER}
@@ -487,7 +487,7 @@ ExternalProject_Add(hdf5
       --prefix=<INSTALL_DIR>
       --includedir=<INSTALL_DIR>/include/hdf5
       --with-zlib=${ZLIB_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
-      --with-szip=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
+      --with-szlib=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
       --disable-netcdf
       --disable-cxx
       --enable-hl
@@ -660,6 +660,12 @@ ExternalProject_Add(netcdf-fortran
 # netCDF-CXX4 #
 ###############
 
+# For some reason, on Darwin, this line breaks the build but
+# on Linux it's needed!
+if(CMAKE_SYSTEM_NAME MATCHES Linux)
+   set(NCXX4_LDFLAGS "LDFLAGS=-L${CMAKE_INSTALL_PREFIX}/lib")
+endif()
+
 FetchContent_Declare(netcdf-cxx4
    URL      ${NETCDF_CXX4_URL}
    URL_HASH ${NETCDF_CXX4_HASH}
@@ -676,14 +682,13 @@ ExternalProject_Add(netcdf-cxx4
    CONFIGURE_COMMAND <SOURCE_DIR>/configure
       --prefix=<INSTALL_DIR>
       --includedir=<INSTALL_DIR>/include/netcdf
-      ${NC_PAR_TESTS}
       CC=${PARALLEL_C_COMPILER}
       CFLAGS=${BASELIBS_C_FLAGS}
       CXXFLAGS=${BASELIBS_C_FLAGS}
       CXX=${PARALLEL_CXX_COMPILER}
       FC=${PARALLEL_Fortran_COMPILER}
       "CPPFLAGS=-I${NETCDF_INCLUDE_DIR} ${NETCDF_NEEDED_INCLUDES_STRING}"
-      "LDFLAGS=-L${CMAKE_INSTALL_PREFIX}/lib ${CURL_LIBS}"
+      ${NCXX4_LDFLAGS}
 
    BUILD_COMMAND ${MAKE_EXE} -j1
 
@@ -1088,7 +1093,7 @@ ExternalProject_Add(cdo
       --prefix=<INSTALL_DIR>
       --includedir=<INSTALL_DIR>/include/cdo
       --with-zlib=<INSTALL_DIR>
-      --with-szip=<INSTALL_DIR>
+      --with-szlib=<INSTALL_DIR>
       --with-hdf5=<INSTALL_DIR>
       --with-netcdf=<INSTALL_DIR>
       --with-udunits2=<INSTALL_DIR>
@@ -1184,7 +1189,7 @@ if (BUILD_HDFEOS)
          --prefix=<INSTALL_DIR>
          --includedir=<INSTALL_DIR>/include/hdfeos
          --with-zlib=${ZLIB_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
-         --with-szip=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
+         --with-szlib=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-jpeg=${JPEG_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-hdf4=${HDF4_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          CC=${H4_C_COMPILER}
@@ -1234,7 +1239,7 @@ if (BUILD_HDFEOS5)
          --prefix=<INSTALL_DIR>
          --includedir=<INSTALL_DIR>/include/hdfeos5
          --with-zlib=${ZLIB_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
-         --with-szip=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
+         --with-szlib=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-jpeg=${JPEG_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-hdf5=${HDF5_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          CC=${H5_C_COMPILER}
@@ -1284,7 +1289,7 @@ if (BUILD_SDPTOOLKIT)
          --prefix=<INSTALL_DIR>
          --includedir=<INSTALL_DIR>/include/SDPToolkit
          --with-zlib=${ZLIB_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
-         --with-szip=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
+         --with-szlib=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-jpeg=${JPEG_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-hdf4=${HDF4_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-hdf5=${HDF5_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
