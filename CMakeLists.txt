@@ -660,12 +660,6 @@ ExternalProject_Add(netcdf-fortran
 # netCDF-CXX4 #
 ###############
 
-# For some reason, on Darwin, this line breaks the build but
-# on Linux it's needed!
-if(CMAKE_SYSTEM_NAME MATCHES Linux)
-   set(NCXX4_LDFLAGS "LDFLAGS=-L${CMAKE_INSTALL_PREFIX}/lib")
-endif()
-
 FetchContent_Declare(netcdf-cxx4
    URL      ${NETCDF_CXX4_URL}
    URL_HASH ${NETCDF_CXX4_HASH}
@@ -679,16 +673,17 @@ endif()
 ExternalProject_Add(netcdf-cxx4
    SOURCE_DIR ${netcdf-cxx4_SOURCE_DIR}
 
-   CONFIGURE_COMMAND <SOURCE_DIR>/configure
+   CONFIGURE_COMMAND ${CMAKE_COMMAND} -E env "LD_LIBRARY_PATH=${CMAKE_INSTALL_PREFIX}/lib:$ENV{LD_LIBRARY_PATH}" <SOURCE_DIR>/configure
       --prefix=<INSTALL_DIR>
       --includedir=<INSTALL_DIR>/include/netcdf
+      --with-nc-config=<INSTALL_DIR>/bin
       CC=${PARALLEL_C_COMPILER}
       CFLAGS=${BASELIBS_C_FLAGS}
       CXXFLAGS=${BASELIBS_C_FLAGS}
       CXX=${PARALLEL_CXX_COMPILER}
       FC=${PARALLEL_Fortran_COMPILER}
       "CPPFLAGS=-I${NETCDF_INCLUDE_DIR} ${NETCDF_NEEDED_INCLUDES_STRING}"
-      ${NCXX4_LDFLAGS}
+      "LDFLAGS=-L${CMAKE_INSTALL_PREFIX}/lib -lnetcdf -lhdf5"
 
    BUILD_COMMAND ${MAKE_EXE} -j1
 
