@@ -44,7 +44,7 @@ set(DEFAULT_INSTALL_NAME ${INSTALL_COMPILER_NAME}-${INSTALL_MPI_NAME})
 #message(STATUS "DEFAULT_INSTALL_NAME: ${DEFAULT_INSTALL_NAME}")
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-   message(STATUS "*** Attempt to use default CMAKE_INSTALL_PREFIX of ${CMAKE_INSTALL_PREFIX} which is usually only writable by root")
+   message(STATUS "*** Attempt to use default CMAKE_INSTALL_PREFIX which is usually only writable by root so not allowed")
    set (CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}/${DEFAULT_INSTALL_NAME}/${CMAKE_SYSTEM_NAME}" CACHE PATH "Default install path" FORCE )
    message(STATUS "*** Setting default install prefix to ${BoldYellow}${CMAKE_INSTALL_PREFIX}${ColorReset}")
    message(STATUS "*** Override with -DCMAKE_INSTALL_PREFIX=<path>.")
