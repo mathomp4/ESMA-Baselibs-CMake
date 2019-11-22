@@ -135,6 +135,7 @@ if (Java_FOUND)
       INSTALL_COMMAND $(MAKE) install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+      LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/antlr
       LOG_CONFIGURE         TRUE
       LOG_BUILD             TRUE
       LOG_INSTALL           TRUE
@@ -180,6 +181,7 @@ if (Java_FOUND)
       INSTALL_COMMAND $(MAKE) install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+      LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/gsl
       LOG_CONFIGURE         TRUE
       LOG_BUILD             TRUE
       LOG_INSTALL           TRUE
@@ -222,11 +224,12 @@ ExternalProject_Add(jpeg
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
-      LOG_CONFIGURE         TRUE
-      LOG_BUILD             TRUE
-      LOG_INSTALL           TRUE
-      LOG_MERGED_STDOUTERR  TRUE
-      LOG_OUTPUT_ON_FAILURE TRUE
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/jpeg
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    )
 ExternalProject_Get_property(jpeg SOURCE_DIR INSTALL_DIR)
 set(JPEG_SOURCE_DIR ${SOURCE_DIR})
@@ -264,6 +267,7 @@ ExternalProject_Add(zlib
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/zlib
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -308,6 +312,7 @@ ExternalProject_Add(szip
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/szip
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -362,6 +367,7 @@ if (BUILD_CURL)
       INSTALL_COMMAND $(MAKE) install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+      LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/curl
       LOG_CONFIGURE         TRUE
       LOG_BUILD             TRUE
       LOG_INSTALL           TRUE
@@ -426,6 +432,7 @@ ExternalProject_Add(hdf4
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/hdf4
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -497,6 +504,7 @@ ExternalProject_Add(hdf5
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/hdf5
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -588,6 +596,7 @@ ExternalProject_Add(netcdf
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/netcdf
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -637,6 +646,7 @@ ExternalProject_Add(netcdf-fortran
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/netcdf-fortran
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -680,6 +690,7 @@ ExternalProject_Add(netcdf-cxx4
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/netcdf-cxx4
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -723,6 +734,7 @@ ExternalProject_Add(udunits2
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/udunits2
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -761,6 +773,7 @@ ExternalProject_Add(flap
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/flap
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -795,6 +808,7 @@ ExternalProject_Add(gftl
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/gftl
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -828,6 +842,7 @@ ExternalProject_Add(gftl-shared
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/gftl-shared
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -863,6 +878,7 @@ ExternalProject_Add(fargparse
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/fargparse
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -900,6 +916,7 @@ ExternalProject_Add(pfunit
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/pfunit
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -965,6 +982,7 @@ ExternalProject_Add(esmf
       ESMF_MACHINE=${CMAKE_SYSTEM_PROCESSOR}
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/esmf
    LOG_CONFIGURE         TRUE
    #LOG_BUILD             TRUE  # If this is enabled, esmf will not build
    #LOG_INSTALL           TRUE  # If this is enabled, esmf will not install
@@ -1036,6 +1054,7 @@ ExternalProject_Add(nco
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/nco
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -1087,6 +1106,7 @@ ExternalProject_Add(cdo
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/cdo
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -1132,6 +1152,7 @@ ExternalProject_Add(nccmp
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/nccmp
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
@@ -1177,6 +1198,7 @@ if (BUILD_HDFEOS)
             COMMAND $(MAKE) -C include install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+      LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/hdfeos
       LOG_CONFIGURE         TRUE
       LOG_BUILD             TRUE
       LOG_INSTALL           TRUE
@@ -1226,6 +1248,7 @@ if (BUILD_HDFEOS5)
             COMMAND $(MAKE) -C include install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+      LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/hdfeos5
       LOG_CONFIGURE         TRUE
       LOG_BUILD             TRUE
       LOG_INSTALL           TRUE
@@ -1278,6 +1301,7 @@ if (BUILD_SDPTOOLKIT)
       INSTALL_COMMAND $(MAKE) install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
+      LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/sdptoolkit
       LOG_CONFIGURE         TRUE
       LOG_BUILD             TRUE
       LOG_INSTALL           TRUE
