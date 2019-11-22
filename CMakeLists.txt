@@ -134,6 +134,12 @@ if (Java_FOUND)
 
       INSTALL_COMMAND $(MAKE) install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+      LOG_CONFIGURE         TRUE
+      LOG_BUILD             TRUE
+      LOG_INSTALL           TRUE
+      LOG_MERGED_STDOUTERR  TRUE
+      LOG_OUTPUT_ON_FAILURE TRUE
       )
    ExternalProject_Get_property(antlr SOURCE_DIR INSTALL_DIR)
    set(ANTLR_SOURCE_DIR ${SOURCE_DIR})
@@ -173,6 +179,12 @@ if (Java_FOUND)
 
       INSTALL_COMMAND $(MAKE) install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+      LOG_CONFIGURE         TRUE
+      LOG_BUILD             TRUE
+      LOG_INSTALL           TRUE
+      LOG_MERGED_STDOUTERR  TRUE
+      LOG_OUTPUT_ON_FAILURE TRUE
       )
    ExternalProject_Get_property(gsl SOURCE_DIR INSTALL_DIR)
    set(GSL_SOURCE_DIR ${SOURCE_DIR})
@@ -209,6 +221,12 @@ ExternalProject_Add(jpeg
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+      LOG_CONFIGURE         TRUE
+      LOG_BUILD             TRUE
+      LOG_INSTALL           TRUE
+      LOG_MERGED_STDOUTERR  TRUE
+      LOG_OUTPUT_ON_FAILURE TRUE
    )
 ExternalProject_Get_property(jpeg SOURCE_DIR INSTALL_DIR)
 set(JPEG_SOURCE_DIR ${SOURCE_DIR})
@@ -245,6 +263,12 @@ ExternalProject_Add(zlib
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    )
 ExternalProject_Get_property(zlib SOURCE_DIR INSTALL_DIR)
 set(ZLIB_SOURCE_DIR ${SOURCE_DIR})
@@ -283,6 +307,12 @@ ExternalProject_Add(szip
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    )
 ExternalProject_Get_property(szip SOURCE_DIR INSTALL_DIR)
 set(SZIP_SOURCE_DIR ${SOURCE_DIR})
@@ -331,6 +361,12 @@ if (BUILD_CURL)
 
       INSTALL_COMMAND $(MAKE) install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+      LOG_CONFIGURE         TRUE
+      LOG_BUILD             TRUE
+      LOG_INSTALL           TRUE
+      LOG_MERGED_STDOUTERR  TRUE
+      LOG_OUTPUT_ON_FAILURE TRUE
       
       DEPENDS zlib
       )
@@ -389,6 +425,12 @@ ExternalProject_Add(hdf4
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    
    DEPENDS jpeg
    DEPENDS zlib
@@ -454,6 +496,12 @@ ExternalProject_Add(hdf5
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    
    DEPENDS zlib
    DEPENDS szip
@@ -539,6 +587,12 @@ ExternalProject_Add(netcdf
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    
    DEPENDS hdf5
    DEPENDS hdf4
@@ -582,6 +636,12 @@ ExternalProject_Add(netcdf-fortran
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    
    DEPENDS netcdf
    )
@@ -619,6 +679,12 @@ ExternalProject_Add(netcdf-cxx4
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    
    DEPENDS netcdf
    )
@@ -656,6 +722,12 @@ ExternalProject_Add(udunits2
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    )
 ExternalProject_Get_property(udunits2 SOURCE_DIR INSTALL_DIR)
 set(UDUNITS2_SOURCE_DIR ${SOURCE_DIR})
@@ -692,7 +764,9 @@ ExternalProject_Add(flap
    LOG_CONFIGURE         TRUE
    LOG_BUILD             TRUE
    LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
    LOG_OUTPUT_ON_FAILURE TRUE
+
    )
 
 ########
@@ -720,6 +794,12 @@ ExternalProject_Add(gftl
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    )
 
 ###############
@@ -747,6 +827,12 @@ ExternalProject_Add(gftl-shared
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
 
    DEPENDS gftl
    )
@@ -776,6 +862,12 @@ ExternalProject_Add(fargparse
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
 
    DEPENDS gftl
    DEPENDS gftl-shared
@@ -807,6 +899,12 @@ ExternalProject_Add(pfunit
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
 
    DEPENDS gftl
    DEPENDS gftl-shared
@@ -866,6 +964,12 @@ ExternalProject_Add(esmf
       ESMF_OS=${CMAKE_SYSTEM_NAME}
       ESMF_MACHINE=${CMAKE_SYSTEM_PROCESSOR}
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   #LOG_BUILD             TRUE  # If this is enabled, esmf will not build
+   #LOG_INSTALL           TRUE  # If this is enabled, esmf will not install
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
 
    DEPENDS netcdf-fortran
    )
@@ -931,6 +1035,12 @@ ExternalProject_Add(nco
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    
    DEPENDS netcdf
    DEPENDS udunits2
@@ -976,6 +1086,12 @@ ExternalProject_Add(cdo
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    
    DEPENDS netcdf
    DEPENDS udunits2
@@ -1015,6 +1131,12 @@ ExternalProject_Add(nccmp
 
    INSTALL_COMMAND $(MAKE) install
    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
    
    DEPENDS netcdf
    )
@@ -1054,6 +1176,12 @@ if (BUILD_HDFEOS)
       INSTALL_COMMAND $(MAKE) install
             COMMAND $(MAKE) -C include install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+      LOG_CONFIGURE         TRUE
+      LOG_BUILD             TRUE
+      LOG_INSTALL           TRUE
+      LOG_MERGED_STDOUTERR  TRUE
+      LOG_OUTPUT_ON_FAILURE TRUE
       
       DEPENDS hdf4
       )
@@ -1097,6 +1225,12 @@ if (BUILD_HDFEOS5)
       INSTALL_COMMAND $(MAKE) install
             COMMAND $(MAKE) -C include install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+      LOG_CONFIGURE         TRUE
+      LOG_BUILD             TRUE
+      LOG_INSTALL           TRUE
+      LOG_MERGED_STDOUTERR  TRUE
+      LOG_OUTPUT_ON_FAILURE TRUE
       
       DEPENDS hdf5
       )
@@ -1143,6 +1277,12 @@ if (BUILD_SDPTOOLKIT)
 
       INSTALL_COMMAND $(MAKE) install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+      LOG_CONFIGURE         TRUE
+      LOG_BUILD             TRUE
+      LOG_INSTALL           TRUE
+      LOG_MERGED_STDOUTERR  TRUE
+      LOG_OUTPUT_ON_FAILURE TRUE
       
       DEPENDS hdfeos
       DEPENDS hdfeos5
