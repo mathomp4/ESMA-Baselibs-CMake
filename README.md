@@ -6,6 +6,23 @@ This git repository contains a simplified version of the "baselibs"
 module first developed by Gerhard Theurich and later matained by Eugene
 Mirvis, Denis Nadeau, and Matthew Thompson. 
 
+These libraries are used to build the [GEOS Earth System
+Models](https://github.com/GEOS-ESM/).
+
+## Installation Instructions
+
+The simple installation instructions are:
+```
+mkdir build
+cd build
+cmake ..
+```
+CMake will use a default installation prefix though you can override it
+with `-DCMAKE_INSTALL_PREFIX=<path>`. (Note that due to GEOS oddities,
+you'll want to have the last node of the installation directory end in
+Linux or Darwin depending on your own OS. CMake will inform you if this
+is not set correctly.)
+
 ## Current State of Libraries
 
 | Library                                                                  | Version     |
@@ -34,7 +51,5 @@ Mirvis, Denis Nadeau, and Matthew Thompson.
 | [HDF-EOS2](http://hdfeos.org/software/library.php)                       | 2.20        |
 | [HDF-EOS5](http://hdfeos.org/software/library.php)                       | 1.16        |
 | [SDP Toolkit](https://newsroom.gsfc.nasa.gov/sdptoolkit/TKDownload.html) | 5.2.20      |
-
-## Installation Instructions
 
 For additional information, contact Matthew.Thompson@nasa.gov
