@@ -751,7 +751,7 @@ set(UDUNITS2_INCLUDE_DIR ${INSTALL_DIR}/include/udunits2)
 
 FetchContent_Declare(flap
    GIT_REPOSITORY https://github.com/mathomp4/FLAP.git
-   GIT_TAG        geos/v1.4.0
+   GIT_TAG        geos/v1.5.0
    GIT_SHALLOW    TRUE
    GIT_PROGRESS   TRUE
 )
