@@ -3,7 +3,7 @@
 # ESMA Baselibs
 
 This git repository contains a simplified version of the "baselibs"
-module first developed by Gerhard Theurich and later matained by Eugene
+module first developed by Gerhard Theurich and later maintained by Eugene
 Mirvis, Denis Nadeau, and Matthew Thompson. 
 
 These libraries are used to build the [GEOS Earth System
@@ -17,11 +17,41 @@ mkdir build
 cd build
 cmake ..
 ```
-CMake will use a default installation prefix though you can override it
+
+CMake will attempt to construct a default installation prefix (based on
+`ESMF_COMM` and `ESMF_COMPILER`, see below) though you can override it
 with `-DCMAKE_INSTALL_PREFIX=<path>`. (Note that due to GEOS oddities,
 you'll want to have the last node of the installation directory end in
 Linux or Darwin depending on your own OS. CMake will inform you if this
 is not set correctly.)
+
+### Options
+
+There are five options for this build:
+
+* `-DBUILD_MPI=ON|OFF`
+   * This option is whether to build parallel HDF5 and thus support in
+     netCDF. The default is **ON**
+* `-DBUILD_CURL=ON|OFF`
+   * Whether to build cURL. The default is **ON**
+* `-DBUILD_HDFEOS=ON|OFF`
+   * Whether to build HDF-EOS2. The default is **OFF**
+* `-DBUILD_HDFEOS5=ON|OFF`
+   * Whether to build HDF-EOS5. The default is **OFF**
+* `-DBUILD_SDPTOOLKIT=ON|OFF`
+   * Whether to build SDPToolkit. The default is **OFF**
+
+### ESMF Options
+
+This environment supports the passing in of three ESMF options:
+
+* `ESMF_COMM`
+* `ESMF_COMPILER`
+* `ESMF_BOPT`
+
+If none are provided, the system will try to automatically detect your
+compiler and MPI stack and will set `ESMF_BOPT=O`. 
+
 
 ## Current State of Libraries
 

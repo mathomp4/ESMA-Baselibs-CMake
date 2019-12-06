@@ -76,6 +76,9 @@ endif ()
 
 include(DetermineESMFCOMM)
 include(DetermineESMFCOMPILER)
+set (ESMF_BOPT "O" CACHE STRING "ESMF Optimization Level")
+message(STATUS "Using ESMF_BOPT: ${ESMF_BOPT}")
+
 include(InstallDirectoryCheck)
 
 set(H4_C_COMPILER       ${CMAKE_INSTALL_PREFIX}/bin/h4cc-hdf4)
@@ -958,6 +961,7 @@ ExternalProject_Add(esmf
       ESMF_INSTALL_BINDIR=<INSTALL_DIR>/bin
       ESMF_COMPILER=${ESMF_COMPILER}
       ESMF_COMM=${ESMF_COMM}
+      ESMF_BOPT=${ESMF_BOPT}
       ESMF_NETCDF=split
       ESMF_NETCDF_INCLUDE=<INSTALL_DIR>/include/netcdf
       ESMF_NETCDF_LIBPATH=<INSTALL_DIR>/lib
@@ -975,6 +979,7 @@ ExternalProject_Add(esmf
       ESMF_INSTALL_BINDIR=<INSTALL_DIR>/bin
       ESMF_COMPILER=${ESMF_COMPILER}
       ESMF_COMM=${ESMF_COMM}
+      ESMF_BOPT=${ESMF_BOPT}
       ESMF_NETCDF=split
       ESMF_NETCDF_INCLUDE=<INSTALL_DIR>/include/netcdf
       ESMF_NETCDF_LIBPATH=<INSTALL_DIR>/lib
