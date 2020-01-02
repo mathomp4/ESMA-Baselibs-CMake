@@ -56,14 +56,14 @@ else()
    get_filename_component(LAST_DIR_NODE ${CMAKE_INSTALL_PREFIX} NAME)
    #message(STATUS "LAST_DIR_NODE: ${LAST_DIR_NODE}")
    if (NOT LAST_DIR_NODE STREQUAL ${CMAKE_SYSTEM_NAME})
-      message(FATAL_ERROR 
+      message(WARNING 
          "Due to current scripting limitations in GEOS, the last node of the Baselibs installation must\
-         match the CMAKE_SYSTEM_NAME (aka 'uname -s') which for this machine is ${BoldYellow}${CMAKE_SYSTEM_NAME}${ColorReset}\
-         Please change your CMAKE_INSTALL_PREFIX so that the last folder in the directory\
-         path is ${BoldYellow}${CMAKE_SYSTEM_NAME}${ColorReset} a la:
-         ${BoldWhite}${CMAKE_INSTALL_PREFIX}/${CMAKE_SYSTEM_NAME}${ColorReset}
+         match the CMAKE_SYSTEM_NAME (aka 'uname -s') which for this machine is ${BoldYellow}${CMAKE_SYSTEM_NAME}${ColorReset}.\
+         CMake will change your CMAKE_INSTALL_PREFIX so that the last folder in the directory\
+         path is ${BoldYellow}${CMAKE_SYSTEM_NAME}${ColorReset}.
          "
          )
+      set(CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}/${CMAKE_SYSTEM_NAME}")
    endif ()
    message (STATUS "Installing to ${BoldYellow}${CMAKE_INSTALL_PREFIX}${ColorReset}")
 endif()

@@ -59,17 +59,17 @@ set(HDF4_HASH              SHA512=d742743a8b4c1947011e397bc4e5d2445ffb0f92cfe4b8
 ########
 
 set(HDF5_MMVERSION         1.10)
-set(HDF5_VERSION           1.10.5)
+set(HDF5_VERSION           1.10.6)
 set(HDF5_URL               https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${HDF5_MMVERSION}/hdf5-${HDF5_VERSION}/src/hdf5-${HDF5_VERSION}.tar.gz)
-set(HDF5_HASH              SHA512=f828ee9d63533effe1ad358230e5ce7b64c5016e49291d9533575f713cbfba496290fc0151fd9617898bdf36785984ddb38a9207f529d7702d4e23838fe050d8)
+set(HDF5_HASH              SHA512=7667e65194b13df47cbc66fa36ff9aca02d65f8b96a0a5dd91af6932062aaff7a048b29df3b3664ec75aa75ddd531f3d03e3b171e2eb30ff0d8b0f9a647b0f41)
 
 ############
 # netCDF-C #
 ############
 
-set(NETCDF_VERSION         4.7.2)
+set(NETCDF_VERSION         4.7.3)
 set(NETCDF_URL             https://github.com/Unidata/netcdf-c/archive/v${NETCDF_VERSION}.tar.gz)
-set(NETCDF_HASH            SHA512=f2e4d003819884b0222f0441705b3de7a455936803949c12d30d401a653e7ee2b510b0c8374be80271ca57d3980955f9ccc5f064063b654442225ae971f20a93)
+set(NETCDF_HASH            SHA512=5cef5b3499b230b503f87d99cbf5d1ef107550f81489d9be6bb64740692fdd6f967f95f6cb2ab6174d968ee77a08a4e5f3f9d401b2ebc6b482c0e7ded6036f7a)
 
 ##################
 # netcdf-Fortran #
@@ -91,9 +91,9 @@ set(NETCDF_CXX4_HASH       SHA512=404711eb80d5e78968c0f6cbdcb08855a2778d7fd94e7e
 # FLAP #
 ########
 
-set(FLAP_VERSION           geos/v1.4.0 )
+set(FLAP_VERSION           geos/v1.5.0 )
 set(FLAP_URL               https://github.com/mathomp4/FLAP/archive/${FLAP_VERSION}.tar.gz)
-set(FLAP_HASH              SHA512=ee3170853f6f598a4d40c348697eb3b61cdc602a9be782fe18aeb420bb984564986c75a362153ba494a521dbd887c77767d11b1e3416f7a00cca74b52e66715d)
+set(FLAP_HASH              SHA512=18ed3b740ff1bba31949739203f12370ac1f9f1e17282d7bacc7871ca4bf1c6233298e6e7e87227d59e0f99677c6c7fe80a7a2ce71d5b370947d2aff409cd27e)
 
 ########
 # gFTL #
@@ -115,25 +115,25 @@ set(GFTL_SHARED_HASH       SHA512=b57a9adc535be760d56174a129568346ac26b914c08dcd
 # pFUnit #
 ##########
 
-set(PFUNIT_VERSION         v4.1.1)
+set(PFUNIT_VERSION         v4.1.5)
 set(PFUNIT_URL             https://github.com/Goddard-Fortran-Ecosystem/pFUnit/archive/${PFUNIT_VERSION}.tar.gz)
-set(PFUNIT_HASH            SHA512=f853e00af2af5ebeeb5e23a39a6eb3df45ee525b305a9472c5ac04ab3038ce22adca312116eb3e5fe4e486dbcc72d953c81d397bdfc649a935a2566c0fc00b91)
+set(PFUNIT_HASH            SHA512=cb781fcab490721f9e2e91bc4f86678d293e4be0e3a8335878ee41812cab6b131a9b2cec3df0d858d3a5d3a49ff644e1f993dc08fc4385c520b249073384496d)
 
 #############
 # fArgParse #
 #############
 
-set(FARGPARSE_VERSION      v0.9.1)
+set(FARGPARSE_VERSION      v0.9.2)
 set(FARGPARSE_URL          https://github.com/Goddard-Fortran-Ecosystem/fArgParse/archive/${FARGPARSE_VERSION}.tar.gz)
-set(FARGPARSE_HASH         SHA512=68014f914e42565bdfcf7bc19ce2df0ec9e28760dda42e6c6763425ac9bebba9ee1fe5d2e73e98ce62adb81bb8db011b983a9b606a6fc8671d61cb5ed58c56a3)
+set(FARGPARSE_HASH         SHA512=44b7df0b669ad52c5e131b3a6061294b928bbaeafe3b40721a75c8fa0423cb98e4b60689ff9a433b7b70d090c2516d5c4eef8582ad8053ae7b5572c5146d0a9d)
 
 #######
 # NCO #
 #######
 
-set(NCO_VERSION            4.8.1)
+set(NCO_VERSION            4.9.1)
 set(NCO_URL                https://github.com/nco/nco/archive/${NCO_VERSION}.tar.gz)
-set(NCO_HASH               SHA512=16e3849eaaa28c729465099c8dbccc553a0ee6a153552763be2194e49351b18b5649b8463fde7ff05654cb5a17f0aecfb9ffff0eeaac852282861fb52878959e)
+set(NCO_HASH               SHA512=00c785ff5a34313df53d5d4d3badcdc358368b15099f7a2a8e0fe11efdbdee20859a31b93e3609bee7c7a1f9dba60a0897abb101243085f0316fbcb8b02ba2f8)
 
 ########
 # ESMF #
@@ -164,9 +164,9 @@ set(CDO_HASH               SHA512=05bcaac5971dbcb5b3169b0ebf0939f2d727b0506beaee
 # nccmp #
 #########
 
-set(NCCMP_VERSION          1.8.5.0)
+set(NCCMP_VERSION          1.8.6.5)
 set(NCCMP_URL              https://gitlab.com/remikz/nccmp/-/archive/${NCCMP_VERSION}/nccmp-${NCCMP_VERSION}.tar.bz2)
-set(NCCMP_HASH             SHA512=7c243a9ff4a33dae5224fd9cb7b5fa8954ea55677c85ed7478ccf071eed63c96ddc4f03be08f0fd0646dfb10b9615696198ecbb003d522cc186fe9dc60283846)
+set(NCCMP_HASH             SHA512=aaf0e1b56336b48bfffe1f705fbae65b280d63ca1efab065ee4ce37b114b2ffce35823d027f37685bc0b57ac6a326c26634ebf6bb3cd7e3957cb5c42122249ef)
 
 ############
 # HDF-EOS2 #

@@ -3,4 +3,6 @@
 /install*/
 /ifort*/
 /gfortran*/
+/pgfortran*/
+/nagfor*/
 *~
