@@ -1,5 +1,21 @@
 # Changelog
 
+## [6.0.11] - 2020-04-21
+
+### Added
+
+* yaFyaml v0.3.1
+
+### Updates
+
+* cURL 7.69.1
+* HDF4 4.2.15
+* pFUnit v4.1.7
+* gFTL v1.2.5
+* gFTL-shared v1.0.5
+* fArgParse v0.9.3
+* pFlogger v1.4.0
+
 ## [6.0.4] - 2019-12-30
 
 ### Updates

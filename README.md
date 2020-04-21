@@ -62,17 +62,19 @@ compiler and MPI stack and will set `ESMF_BOPT=O`.
 | [netCDF Fortran](https://github.com/Unidata/netcdf-fortran)              | 4.5.2       |
 | [netCDF C++](https://github.com/Unidata/netcdf-cxx4)                     | 4.3.1       |
 | [HDF5](https://portal.hdfgroup.org/display/support)                      | 1.10.6      |
-| [HDF4](https://portal.hdfgroup.org/display/support)                      | 4.2.14      |
-| [pFUnit](https://github.com/Goddard-Fortran-Ecosystem/pFUnit)            | v4.1.5      |
-| [gFTL](https://github.com/Goddard-Fortran-Ecosystem/gFTL)                | v1.2.2      |
-| [gFTL-shared](https://github.com/Goddard-Fortran-Ecosystem/gFTL-shared)  | v1.0.2      |
-| [fArgParse](https://github.com/Goddard-Fortran-Ecosystem/fArgParse)      | v0.9.2      |
+| [HDF4](https://portal.hdfgroup.org/display/support)                      | 4.2.15      |
+| [pFUnit](https://github.com/Goddard-Fortran-Ecosystem/pFUnit)            | v4.1.7      |
+| [gFTL](https://github.com/Goddard-Fortran-Ecosystem/gFTL)                | v1.2.5      |
+| [gFTL-shared](https://github.com/Goddard-Fortran-Ecosystem/gFTL-shared)  | v1.0.5      |
+| [fArgParse](https://github.com/Goddard-Fortran-Ecosystem/fArgParse)      | v0.9.3      |
+| [pFlogger](https://github.com/Goddard-Fortran-Ecosystem/pFlogger)        | v1.4.0      |
+| [yaFyaml](https://github.com/Goddard-Fortran-Ecosystem/yaFyaml)          | v0.3.1      |
 | [antlr](https://www.antlr.org/)                                          | 2.7.7       |
 | [GSL](https://www.gnu.org/software/gsl/)                                 | 2.6         |
 | [jpeg](http://www.ijg.org/)                                              | 9c          |
 | [zlib](http://www.zlib.net/)                                             | 1.2.11      |
 | [szip](https://support.hdfgroup.org/doc_resource/SZIP/)                  | 2.1.1       |
-| [cURL](https://curl.haxx.se/)                                            | 7.67.0      |
+| [cURL](https://curl.haxx.se/)                                            | 7.69.1      |
 | [UDUNITS2](https://github.com/Unidata/UDUNITS-2)                         | 2.2.26      |
 | [NCO](http://nco.sourceforge.net/)                                       | 4.9.1       |
 | [CDO](https://code.mpimet.mpg.de/projects/cdo)                           | 1.9.8       |

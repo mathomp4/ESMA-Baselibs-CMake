@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15.5)
 
 project(ESMA-Baselibs
-   VERSION 6.0.2
+   VERSION 6.0.11
    LANGUAGES Fortran C CXX
    )
 
@@ -929,6 +929,84 @@ ExternalProject_Add(pfunit
    DEPENDS gftl
    DEPENDS gftl-shared
    DEPENDS fargparse
+   )
+
+###########
+# yaFyaml #
+###########
+
+FetchContent_Declare(yafyaml
+   URL      ${YAFYAML_URL}
+   URL_HASH ${YAFYAML_HASH}
+)
+FetchContent_GetProperties(yafyaml)
+if(NOT yafyaml_POPULATED)
+   message(STATUS "Fetching yafyaml...")
+   FetchContent_Populate(yafyaml)
+endif()
+
+ExternalProject_Add(yafyaml
+   SOURCE_DIR ${yafyaml_SOURCE_DIR}
+
+   CMAKE_ARGS
+      -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+      -DCMAKE_PREFIX_PATH:PATH=${CMAKE_INSTALL_PREFIX}
+      -DSKIP_OPENMP:BOOL=YES
+
+   BUILD_COMMAND $(MAKE)
+
+   INSTALL_COMMAND $(MAKE) install
+   INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/yafyaml
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
+
+   DEPENDS gftl
+   DEPENDS gftl-shared
+   )
+
+############
+# pFlogger #
+############
+
+FetchContent_Declare(pflogger
+   URL      ${PFLOGGER_URL}
+   URL_HASH ${PFLOGGER_HASH}
+)
+FetchContent_GetProperties(pflogger)
+if(NOT pflogger_POPULATED)
+   message(STATUS "Fetching pflogger...")
+   FetchContent_Populate(pflogger)
+endif()
+
+ExternalProject_Add(pflogger
+   SOURCE_DIR ${pflogger_SOURCE_DIR}
+
+   CMAKE_ARGS
+      -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+      -DCMAKE_PREFIX_PATH:PATH=${CMAKE_INSTALL_PREFIX}
+      -DCMAKE_BUILD_TYPE=Release
+      -DSKIP_OPENMP:BOOL=YES
+
+   BUILD_COMMAND $(MAKE)
+
+   INSTALL_COMMAND $(MAKE) install
+   INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+
+   LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/pflogger
+   LOG_CONFIGURE         TRUE
+   LOG_BUILD             TRUE
+   LOG_INSTALL           TRUE
+   LOG_MERGED_STDOUTERR  TRUE
+   LOG_OUTPUT_ON_FAILURE TRUE
+
+   DEPENDS gftl
+   DEPENDS gftl-shared
+   DEPENDS yafyaml
    )
 
 ########

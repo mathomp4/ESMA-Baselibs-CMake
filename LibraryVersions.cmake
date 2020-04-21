@@ -42,17 +42,17 @@ set(SZIP_HASH              SHA512=ada6406efb096cd8a2daf8f9217fe9111a96dcae87e29d
 # cURL #
 ########
 
-set(CURL_VERSION           7.67.0)
+set(CURL_VERSION           7.69.1)
 set(CURL_URL               https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.xz)
-set(CURL_HASH              SHA512=1d5a344be92dd61b1ba5189eff0fe337e492f2e850794943570fe71c985d0af60bd412082be646e07aaa8639908593e1ce4bb2d07db35394ec377e8ce8b9ae29)
+set(CURL_HASH              SHA512=dcb917ce9a6f34b30adae10e2e635d7a8c67781d69789cc5617ab2b49e898394ecfeee546453b14ab168d4b3b52baf974b2ec07e7a4b199addbc1ba57274d8fa)
 
 ########
 # HDF4 #
 ########
 
-set(HDF4_VERSION           4.2.14)
+set(HDF4_VERSION           4.2.15)
 set(HDF4_URL               https://support.hdfgroup.org/ftp/HDF/releases/HDF${HDF4_VERSION}/src/hdf-${HDF4_VERSION}.tar.gz)
-set(HDF4_HASH              SHA512=d742743a8b4c1947011e397bc4e5d2445ffb0f92cfe4b82004ac7046daadb027c9263a2b614df8818396de603257fbbf49046f034f0e4c3daaa9f50531f1a0cf)
+set(HDF4_HASH              SHA512=7fdd3422e184e6e2bce018a753d3667771e0c20dfa41041cfa2c10eb65761d36d735679bfdb2d8813d9dfdd8ee99d170debecf487e9a892ca9e24b91a0e21d2b)
 
 ########
 # HDF5 #
@@ -99,33 +99,49 @@ set(FLAP_HASH              SHA512=18ed3b740ff1bba31949739203f12370ac1f9f1e17282d
 # gFTL #
 ########
 
-set(GFTL_VERSION           v1.2.2)
+set(GFTL_VERSION           v1.2.5)
 set(GFTL_URL               https://github.com/Goddard-Fortran-Ecosystem/gFTL/archive/${GFTL_VERSION}.tar.gz)
-set(GFTL_HASH              SHA512=9dbf75482d4c8f8692f2f02190e24093cb8459104c4b1df1c242f4faeb5df2920dc592a8091c53f5a3d205a60e660a6afaf3573ec08e1e5ec488d8162b95ab5f)
+set(GFTL_HASH              SHA512=6a2f5f1bfa2dc3d90bbb6d9a02407a1b7cbac2b9e34be8e9d0470aba529286907e830e4269f7f888f9ddf15fa24184930fa98db6514adfe78fd428fd6c46bcd8)
 
 ###############
 # gFTL-shared #
 ###############
 
-set(GFTL_SHARED_VERSION    v1.0.2)
+set(GFTL_SHARED_VERSION    v1.0.5)
 set(GFTL_SHARED_URL        https://github.com/Goddard-Fortran-Ecosystem/gFTL-shared/archive/${GFTL_SHARED_VERSION}.tar.gz)
-set(GFTL_SHARED_HASH       SHA512=b57a9adc535be760d56174a129568346ac26b914c08dcdcf0085e166c8e30562e898d27e05b320b9613b062b5214fe0edce415b2c9f9fd7ec50dd8e849348528)
+set(GFTL_SHARED_HASH       SHA512=87e627d6f48c50550c010e15739bd1fec57edeb06f80389aebd8981ec050f7f2e7f7eb117442221ec3f7f5646a6a9e98b67605f26018b9bbe063fb2627224508)
 
 ##########
 # pFUnit #
 ##########
 
-set(PFUNIT_VERSION         v4.1.5)
+set(PFUNIT_VERSION         v4.1.7)
 set(PFUNIT_URL             https://github.com/Goddard-Fortran-Ecosystem/pFUnit/archive/${PFUNIT_VERSION}.tar.gz)
-set(PFUNIT_HASH            SHA512=cb781fcab490721f9e2e91bc4f86678d293e4be0e3a8335878ee41812cab6b131a9b2cec3df0d858d3a5d3a49ff644e1f993dc08fc4385c520b249073384496d)
+set(PFUNIT_HASH            SHA512=2ddd9b0d7acf2dd342468da9df6e290ef483631c1dea114e44b93bfef5fb6116121cbc5b4b1c0dca8776311609ff8d49f0c568a4571fa158052d05022d0101d5)
 
 #############
 # fArgParse #
 #############
 
-set(FARGPARSE_VERSION      v0.9.2)
+set(FARGPARSE_VERSION      v0.9.3)
 set(FARGPARSE_URL          https://github.com/Goddard-Fortran-Ecosystem/fArgParse/archive/${FARGPARSE_VERSION}.tar.gz)
-set(FARGPARSE_HASH         SHA512=44b7df0b669ad52c5e131b3a6061294b928bbaeafe3b40721a75c8fa0423cb98e4b60689ff9a433b7b70d090c2516d5c4eef8582ad8053ae7b5572c5146d0a9d)
+set(FARGPARSE_HASH         SHA512=84e1382d39b9a075d48b40ccd9879228d559c8c5ebbfd1c90b7c681abad5f866c4586030f7fa07f4ca20259a698bbaff4c663b254d53a0a9956c830361cc957b)
+
+############
+# pFlogger #
+############
+
+set(PFLOGGER_VERSION       v1.4.0)
+set(PFLOGGER_URL           https://github.com/Goddard-Fortran-Ecosystem/pFlogger/archive/${PFLOGGER_VERSION}.tar.gz)
+set(PFLOGGER_HASH          SHA512=bd1b903dee6ca0272a39c0037d516f8e2c8114a038f172c060ffd818276ef8fccf94e7a1f0ef651a9a0c8a7ae67513f6433e324710c94903677fbda56aa82d62)
+
+###########
+# yaFyaml #
+###########
+
+set(YAFYAML_VERSION        v0.3.1)
+set(YAFYAML_URL            https://github.com/Goddard-Fortran-Ecosystem/yaFyaml/archive/${YAFYAML_VERSION}.tar.gz)
+set(YAFYAML_HASH           SHA512=eb42cce8480f8978e3e92fff5d864bc7770311f21c6b78deda5e6a7266490679d6c14e419da4034c8152b6e488f73b04c9daba5abecbfe5fadf34e65c66643be)
 
 #######
 # NCO #
