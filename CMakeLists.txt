@@ -1014,7 +1014,7 @@ ExternalProject_Add(pflogger
 ########
 
 FetchContent_Declare(esmf
-   GIT_REPOSITORY https://git.code.sf.net/p/esmf/esmf
+   GIT_REPOSITORY https://github.com/esmf-org/esmf.git
    GIT_TAG ESMF_8_0_1_beta_snapshot_02
    GIT_SHALLOW TRUE
    GIT_PROGRESS TRUE
