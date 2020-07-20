@@ -26,7 +26,7 @@ if (NOT ESMF_COMPILER)
    # NAG
    # ---
    if (CMAKE_Fortran_COMPILER_ID MATCHES "NAG")
-      if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+      if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
          set(ESMF_COMPILER nag)
       elseif(CMAKE_CXX_COMPILER_ID MATCHES "Intel")
          set(ESMF_COMPILER nagintel)
