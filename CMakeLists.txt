@@ -37,6 +37,10 @@ endif()
 if(BUILD_SDPTOOLKIT AND NOT BUILD_HDFEOS5)
    message(FATAL_ERROR "You must set -DBUILD_HDFEOS5=ON to build SDPToolkit")
 endif()
+if(BUILD_SDPTOOLKIT AND APPLE)
+   message(WARNING "SDP Toolkit cannot build on Apple currently. Turning off SDP Toolkit build.")
+   set(BUILD_SDPTOOLKIT OFF)
+endif()
 
 set(SERIAL_C_COMPILER       ${CMAKE_C_COMPILER})
 set(SERIAL_CXX_COMPILER     ${CMAKE_CXX_COMPILER})
@@ -56,9 +60,6 @@ if (BUILD_MPI)
 
    set(H5_PARALLEL --enable-parallel)
 
-   set(H5_C_COMPILER       ${CMAKE_INSTALL_PREFIX}/bin/h5pcc)
-   set(H5_Fortran_COMPILER ${CMAKE_INSTALL_PREFIX}/bin/h5pfc)
-
    set(NC_PAR_TESTS --enable-parallel-tests)
 
 else ()
@@ -67,9 +68,6 @@ else ()
    set(PARALLEL_Fortran_COMPILER ${CMAKE_Fortran_COMPILER})
 
    set(H5_PARALLEL --disable-parallel)
-
-   set(H5_C_COMPILER       ${CMAKE_INSTALL_PREFIX}/bin/h5cc)
-   set(H5_Fortran_COMPILER ${CMAKE_INSTALL_PREFIX}/bin/h5fc)
 
    set(NC_PAR_TESTS --disable-parallel-tests)
 
@@ -81,9 +79,6 @@ set (ESMF_BOPT "O" CACHE STRING "ESMF Optimization Level")
 message(STATUS "Using ESMF_BOPT: ${ESMF_BOPT}")
 
 include(InstallDirectoryCheck)
-
-set(H4_C_COMPILER       ${CMAKE_INSTALL_PREFIX}/bin/h4cc-hdf4)
-set(H4_Fortran_COMPILER ${CMAKE_INSTALL_PREFIX}/bin/h4fc-hdf4)
 
 if (CMAKE_Fortran_COMPILER_ID MATCHES "NAG")
    set(HDF5_ENABLE_F2003 --disable-fortran2003)
@@ -1276,6 +1271,9 @@ endif (BUILD_NCCMP)
 ##########
 
 if (BUILD_HDFEOS)
+   set(H4_C_COMPILER       ${CMAKE_INSTALL_PREFIX}/bin/h4cc-hdf4)
+   set(H4_Fortran_COMPILER ${CMAKE_INSTALL_PREFIX}/bin/h4fc-hdf4)
+
    FetchContent_Declare(hdfeos
       URL      ${HDFEOS_URL}
       URL_HASH ${HDFEOS_HASH}
@@ -1296,6 +1294,7 @@ if (BUILD_HDFEOS)
          --with-szlib=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-jpeg=${JPEG_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-hdf4=${HDF4_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
+         --enable-install-include
          CC=${H4_C_COMPILER}
          CFLAGS=${BASELIBS_C_FLAGS}
          "CPPFLAGS=-Df2cfortran -I${NETCDF_INCLUDE_DIR} ${NETCDF_NEEDED_INCLUDES_STRING}"
@@ -1304,7 +1303,6 @@ if (BUILD_HDFEOS)
       BUILD_COMMAND $(MAKE)
 
       INSTALL_COMMAND $(MAKE) install
-            COMMAND $(MAKE) -C include install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
       LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/hdfeos
@@ -1326,6 +1324,14 @@ endif (BUILD_HDFEOS)
 ###########
 
 if (BUILD_HDFEOS5)
+   if (BUILD_MPI)
+      set(H5_C_COMPILER       ${CMAKE_INSTALL_PREFIX}/bin/h5pcc)
+      set(H5_Fortran_COMPILER ${CMAKE_INSTALL_PREFIX}/bin/h5pfc)
+   else ()
+      set(H5_C_COMPILER       ${CMAKE_INSTALL_PREFIX}/bin/h5cc)
+      set(H5_Fortran_COMPILER ${CMAKE_INSTALL_PREFIX}/bin/h5fc)
+   endif()
+
    FetchContent_Declare(hdfeos5
       URL      ${HDFEOS5_URL}
       URL_HASH ${HDFEOS5_HASH}
@@ -1346,6 +1352,7 @@ if (BUILD_HDFEOS5)
          --with-szlib=${SZIP_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-jpeg=${JPEG_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
          --with-hdf5=${HDF5_INCLUDE_DIR},${CMAKE_INSTALL_PREFIX}/lib
+         --enable-install-include
          CC=${H5_C_COMPILER}
          CFLAGS=${BASELIBS_C_FLAGS}
          "CPPFLAGS=-Df2cfortran -I${NETCDF_INCLUDE_DIR} ${NETCDF_NEEDED_INCLUDES_STRING}"
@@ -1354,7 +1361,6 @@ if (BUILD_HDFEOS5)
       BUILD_COMMAND $(MAKE)
 
       INSTALL_COMMAND $(MAKE) install
-            COMMAND $(MAKE) -C include install
       INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
 
       LOG_DIR               ${CMAKE_INSTALL_PREFIX}/logs/hdfeos5

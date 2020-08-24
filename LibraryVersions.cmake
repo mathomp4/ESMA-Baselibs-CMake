@@ -42,9 +42,9 @@ set(SZIP_HASH              SHA512=ada6406efb096cd8a2daf8f9217fe9111a96dcae87e29d
 # cURL #
 ########
 
-set(CURL_VERSION           7.70.0)
+set(CURL_VERSION           7.71.1)
 set(CURL_URL               https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.xz)
-set(CURL_HASH              SHA512=ab8796af1bd6f35ae704fd5e3639a8153482615a05c24e2e6d0b9cef8ed9a1e0d497ead2dbf5972cc53f632c2d87f0bf79e9e7cac625452dd24e6c7d8045cfc6)
+set(CURL_HASH              SHA512=631e0ee8562e5029fe022bfab4222836a3e6d666e82e2bfbd78311fe5985105218a36d1ea68c93472fc57a12b713957a3bcca6e385eda4e58a47ca8d5d50265b)
 
 ########
 # HDF4 #
@@ -115,9 +115,9 @@ set(GFTL_SHARED_HASH       SHA512=88a6cf8cdee555b8a275d590b6e36bdd27763fe2a5336a
 # pFUnit #
 ##########
 
-set(PFUNIT_VERSION         v4.1.8)
+set(PFUNIT_VERSION         v4.1.11)
 set(PFUNIT_URL             https://github.com/Goddard-Fortran-Ecosystem/pFUnit/archive/${PFUNIT_VERSION}.tar.gz)
-set(PFUNIT_HASH            SHA512=16a0b6b0f8f46723c88ef42fec5d35488c10351c1809ff630170fb759f381cb89317aa18a90df539f0ef941edc6fa937224a09e85566452da8d1f489dac299af)
+set(PFUNIT_HASH            SHA512=10de5272edf2131004f68460631ea84c1a5699e90964be38e8ea7ca388435af42b524c11a108c9dc232e8f277791b2b9dc87249352b309aa5b8d11fee984f85d)
 
 #############
 # fArgParse #
@@ -131,25 +131,25 @@ set(FARGPARSE_HASH         SHA512=18d2833033314f0a0051a79990363382c154fdcca17022
 # pFlogger #
 ############
 
-set(PFLOGGER_VERSION       v1.4.2)
+set(PFLOGGER_VERSION       v1.4.3)
 set(PFLOGGER_URL           https://github.com/Goddard-Fortran-Ecosystem/pFlogger/archive/${PFLOGGER_VERSION}.tar.gz)
-set(PFLOGGER_HASH          SHA512=b7810c4f712e864d5dcbfe4f4c2ece2618c0c12b27d90cc41f302ba7b015a51729dd0d79e4aab7d5998c48e528c36f2dd31a87681b5e5ff09f4006c66bd0381a)
+set(PFLOGGER_HASH          SHA512=0664654095a7139def972a2c2ceb1a2342afc8f1a466563d5685d8603b92fb21fc8fd48ace89c36a5500f038c43811546f2f6b7731f6c5f635a550f1ecca1669)
 
 ###########
 # yaFyaml #
 ###########
 
-set(YAFYAML_VERSION        v0.3.3)
+set(YAFYAML_VERSION        v0.4.0)
 set(YAFYAML_URL            https://github.com/Goddard-Fortran-Ecosystem/yaFyaml/archive/${YAFYAML_VERSION}.tar.gz)
-set(YAFYAML_HASH           SHA512=8e0c5bf85e0a507ad5eb669d73a3f882ed77a5dc30549967986a775076ceabd29ab3919c9489d91ef8e7c4ea9b9e8b80032d3d9a5115a48925d7d87b79a134b1)
+set(YAFYAML_HASH           SHA512=dd686cc8fe90c35a64ce3054ec33734eb8312205fff339613442683d57647d1e2d036ad73335bae1ccc3c6a1506293438ad8faafba349d16f4a3772eda2e5a8b)
 
 #######
 # NCO #
 #######
 
-set(NCO_VERSION            4.9.1)
+set(NCO_VERSION            4.9.3)
 set(NCO_URL                https://github.com/nco/nco/archive/${NCO_VERSION}.tar.gz)
-set(NCO_HASH               SHA512=00c785ff5a34313df53d5d4d3badcdc358368b15099f7a2a8e0fe11efdbdee20859a31b93e3609bee7c7a1f9dba60a0897abb101243085f0316fbcb8b02ba2f8)
+set(NCO_HASH               SHA512=25da4b937dfe935f91857eee2eef7c0d4f57e2ade32b1cd5fd7b7888840fc4be8d4e5080dc95d90ad0586e86efc02d46d223e2a0d06637305ce4704e742bb648)
 
 ########
 # ESMF #
@@ -189,7 +189,7 @@ set(NCCMP_HASH             SHA512=0d00786f09829722c4ffae403007f8b9f1308456e92a75
 ############
 
 set(HDFEOS_VERSION         2.20v1.00)
-set(HDFEOS_URL             https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos/latest_release/HDF-EOS${HDFEOS_VERSION}.tar.Z)
+set(HDFEOS_URL             https://git.earthdata.nasa.gov/rest/git-lfs/storage/DAS/hdfeos/cb0f900d2732ab01e51284d6c9e90d0e852d61bba9bce3b43af0430ab5414903?response-content-disposition=attachment%3B%20filename%3D%22HDF-EOS2.20v1.00.tar.Z%22%3B%20filename*%3Dutf-8%27%27HDF-EOS2.20v1.00.tar.Z)
 set(HDFEOS_HASH            SHA512=9ca7cf96d7357c02e82e9290aed5343fdbf27afcbaa755794fbf51f5f27ce3f02e6d9e15a69ced4136d5e9e2610448cc720af049430cd26e37c194983717400a)
 
 ############
@@ -197,7 +197,7 @@ set(HDFEOS_HASH            SHA512=9ca7cf96d7357c02e82e9290aed5343fdbf27afcbaa755
 ############
 
 set(HDFEOS5_VERSION        5.1.16)
-set(HDFEOS5_URL            https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos5/latest_release/HDF-EOS${HDFEOS5_VERSION}.tar.Z)
+set(HDFEOS5_URL            https://git.earthdata.nasa.gov/rest/git-lfs/storage/DAS/hdfeos5/7054de24b90b6d9533329ef8dc89912c5227c83fb447792103279364e13dd452?response-content-disposition=attachment%3B%20filename%3D%22HDF-EOS5.1.16.tar.Z%22%3B%20filename*%3Dutf-8%27%27HDF-EOS5.1.16.tar.Z)
 set(HDFEOS5_HASH           SHA512=d6576ef796903c7df97edc8f6ae8641c08dec7342f36c7a6ece361f696a7543281bbd7485fc47562a300b0bad87289e25322812bb6997d0191639eb5688424a8)
 
 ###############
@@ -205,5 +205,5 @@ set(HDFEOS5_HASH           SHA512=d6576ef796903c7df97edc8f6ae8641c08dec7342f36c7
 ###############
 
 set(SDPTK_VERSION          5.2.20v1.01)
-set(SDPTK_URL              https://observer.gsfc.nasa.gov/ftp/edhs/sdptk/latest_release/SDPTK${SDPTOOLKIT_VERSION}.tar.Z)
+set(SDPTK_URL              https://git.earthdata.nasa.gov/rest/git-lfs/storage/DAS/sdptoolkit/a7ccbb33de2fddf1bafb718cd2d57b9f7ea0416cd80ccb4cf03bd1ec9080d96b?response-content-disposition=attachment%3B%20filename%3D%22SDPTK5.2.20v1.01.tar.Z%22%3B%20filename*%3Dutf-8%27%27SDPTK5.2.20v1.01.tar.Z)
 set(SDPTK_HASH             SHA512=446b3976dd4f21af5ea421dc325d6c8edbb8ea5178e02d37572b143726c0367740d2b07ef48120a5bd31ef700a34c34138f89c21215a921ce877cefbdf159d98)

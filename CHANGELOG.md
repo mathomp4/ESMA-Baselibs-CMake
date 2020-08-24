@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+## [6.0.14] - 2020-08-12
+
+### Updates
+
+* cURL 7.71.1
+* NCO 4.9.3
+* pFUnit v4.1.11
+* pFlogger v1.4.3
+* yaFyaml v0.4.0
+
+### Changed
+
+* Download URLs for HDF-EOS2, HDF-EOS5, and SDP Toolkit have changed due to changes in hosting.
+
 ## [6.0.13] - 2020-05-22
 
 ### Updates
