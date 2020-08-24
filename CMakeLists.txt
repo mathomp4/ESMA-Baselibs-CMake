@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.15.5)
+cmake_minimum_required(VERSION 3.17)
 
 project(ESMA-Baselibs
-   VERSION 6.0.13
+   VERSION 6.0.14
    LANGUAGES Fortran C CXX
    )
 
