@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [6.0.15] - 2020-08-25
+
+### Updates
+
+* cURL 7.72.0
+* gFTL v1.2.6
+* pFUnit v4.1.12
+* pFlogger v1.4.5
+* yaFyaml v0.4.1
+* fArgParse v1.0.0
+
 ## [6.0.14] - 2020-08-12
 
 ### Updates
