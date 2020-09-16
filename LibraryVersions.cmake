@@ -99,9 +99,9 @@ set(NETCDF_CXX4_HASH       SHA512=404711eb80d5e78968c0f6cbdcb08855a2778d7fd94e7e
 # gFTL #
 ########
 
-set(GFTL_VERSION           v1.2.6)
+set(GFTL_VERSION           v1.2.7)
 set(GFTL_URL               https://github.com/Goddard-Fortran-Ecosystem/gFTL/archive/${GFTL_VERSION}.tar.gz)
-set(GFTL_HASH              SHA512=926da1d98e022113b6e8b27dd92a4e21dd69e2d5a5661af8c57004c0db330c36ce40d39e9773745dd805ad9e438162a8e0ca899111f7c12602a31c89609eb6c0)
+set(GFTL_HASH              SHA512=d6b488c511754e82ea31b898008a2c8e6e0a05046f2a0bab681b9fd37ee9c422d63b3ba912c263c32b160caaca4b49557963caa101d141a66c66229d66c54ec8)
 
 ###############
 # gFTL-shared #
@@ -123,9 +123,9 @@ set(PFUNIT_HASH            SHA512=e75e4015ac1026e6c8d80a17bb77efbe5980bfdbaf7c60
 # fArgParse #
 #############
 
-set(FARGPARSE_VERSION      v1.0.0)
+set(FARGPARSE_VERSION      v1.0.1)
 set(FARGPARSE_URL          https://github.com/Goddard-Fortran-Ecosystem/fArgParse/archive/${FARGPARSE_VERSION}.tar.gz)
-set(FARGPARSE_HASH         SHA512=fbaede237a1cdf209a22f0c27b529dadcecd618394bace32c56bff53a9c3b6953d03db08bfc3b00421420af3f3bf403784ec2e042289db6e156e286a328f9748)
+set(FARGPARSE_HASH         SHA512=7dc70119c664e0106fc914f0d082473d68b6d1cd5b5dc174fe843d3a0198b8792c872805c7ca126e2117e10bac507c2be068650ab00ebbef158a087c076305d5)
 
 ############
 # pFlogger #

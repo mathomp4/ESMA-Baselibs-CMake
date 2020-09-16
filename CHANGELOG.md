@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Updates
+
+* gFTL v1.2.7
+* fArgParse v1.0.1
+
 ## [6.0.15] - 2020-08-25
 
 ### Updates
