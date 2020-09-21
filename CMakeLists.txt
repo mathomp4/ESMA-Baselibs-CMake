@@ -99,9 +99,8 @@ if (CMAKE_Fortran_COMPILER_ID MATCHES "GNU")
       set(ENV{ESMF_F90COMPILEOPTS} "${ALLOW_ARGUMENT_MISMATCH} ${ALLOW_INVALID_BOZ}")
       message(STATUS "Setting ESMF_F90COMPILEOPTS: $ENV{ESMF_F90COMPILEOPTS}")
 
-      # nccmp does not build with GCC 10
-      message(WARNING "nccmp currently cannot build with GCC 10. Turning off build")
-      set(BUILD_NCCMP OFF)
+      # nccmp needs a special flag with GCC 10+
+      set(COMMON_FLAG "-fcommon")
    endif ()
 endif ()
 
@@ -1242,7 +1241,7 @@ if (BUILD_NCCMP)
          --includedir=<INSTALL_DIR>/include/nccmp
          --with-netcdf=${NETCDF_SOURCE_DIR}
          CC=${PARALLEL_C_COMPILER}
-         CFLAGS=${BASELIBS_C_FLAGS}
+         "CFLAGS=${BASELIBS_C_FLAGS} ${COMMON_FLAG}"
          FFLAGS=${FORTRAN_PIC_FLAG}
          FCFLAGS=${FORTRAN_PIC_FLAG}
          CXX=${PARALLEL_CXX_COMPILER}
